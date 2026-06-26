@@ -1,21 +1,49 @@
-//Delete an element from a specific position.
+//Add two matrices
 #include <stdio.h>
 
-int main() {
-    int arr[] = {10, 20, 30, 40, 50};
-    int n = 5;
-    int pos = 3;   // Position to delete (1-based)
+int main() 
+{
+    int m,n;
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &m, &n);
 
-    // Shift elements to the left
-    for (int i = pos - 1; i < n - 1; i++) {
-        arr[i] = arr[i + 1];
+    int A[100][100], B[100][100], Sum[100][100];
+
+    printf("Enter elements of first matrix:\n");
+    for (int i = 0; i < m; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            scanf("%d", &A[i][j]);
+        }
     }
 
-    n--; // Reduce array size
+    printf("Enter elements of second matrix:\n");
+    for (int i = 0; i < m; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            scanf("%d", &B[i][j]);
+        }
+    }
 
-    printf("Array after deletion: ");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+    // Add matrices
+    for (int i = 0; i < m; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            Sum[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    printf("Sum of the matrices:\n");
+    for (int i = 0; i < m; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            printf("%d ", Sum[i][j]);
+        }
+        printf("\n");
     }
 
     return 0;

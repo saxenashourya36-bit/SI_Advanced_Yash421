@@ -1,23 +1,41 @@
-//Linear Search: Find an element in an array.
+//Check if a matrix is symmetric.
 #include <stdio.h>
 
 int main() {
-    int arr[] = {10, 25, 30, 45, 60};
-    int n = 5;
-    int key = 30;
-    int found = 0;
+    int n, i, j;
+    int matrix[100][100];
+    int symmetric = 1;
 
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == key) {
-            printf("Element %d found at position %d\n", key, i + 1);
-            found = 1;
-            break;
+    printf("Enter the order of the square matrix: ");
+    scanf("%d", &n);
+
+    printf("Enter the matrix elements:\n");
+    for (i = 0; i < n; i++) 
+    {
+        for (j = 0; j < n; j++) 
+        {
+            scanf("%d", &matrix[i][j]);
         }
     }
 
-    if (!found) {
-        printf("Element %d not found in array\n", key);
+    for (i = 0; i < n; i++) 
+    {
+        for (j = 0; j < n; j++) 
+        {
+            if (matrix[i][j] != matrix[j][i]) 
+            {
+                symmetric = 0;
+                break;
+            }
+        }
+        if (!symmetric)
+            break;
     }
+
+    if (symmetric)
+        printf("The matrix is symmetric.\n");
+    else
+        printf("The matrix is not symmetric.\n");
 
     return 0;
 }

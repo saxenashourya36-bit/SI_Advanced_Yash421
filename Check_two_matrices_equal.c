@@ -1,41 +1,27 @@
-//Check if a matrix is symmetric.
+//Check if two matrices are equal.
 #include <stdio.h>
-
 int main() {
-    int n, i, j;
-    int matrix[100][100];
-    int symmetric = 1;
+    int m, n;
 
-    printf("Enter the order of the square matrix: ");
-    scanf("%d", &n);
+    printf("Enter rows and columns: ");
+    scanf("%d %d", &m, &n);
 
-    printf("Enter the matrix elements:\n");
-    for (i = 0; i < n; i++) 
-    {
-        for (j = 0; j < n; j++) 
-        {
-            scanf("%d", &matrix[i][j]);
+    int a[m][n];
+
+    printf("Enter matrix elements:\n");
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            scanf("%d", &a[i][j]);
         }
     }
 
-    for (i = 0; i < n; i++) 
-    {
-        for (j = 0; j < n; j++) 
-        {
-            if (matrix[i][j] != matrix[j][i]) 
-            {
-                symmetric = 0;
-                break;
-            }
+    printf("Matrix is:\n");
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            printf("%d ", a[i][j]);
         }
-        if (!symmetric)
-            break;
+        printf("\n");
     }
-
-    if (symmetric)
-        printf("The matrix is symmetric.\n");
-    else
-        printf("The matrix is not symmetric.\n");
 
     return 0;
 }

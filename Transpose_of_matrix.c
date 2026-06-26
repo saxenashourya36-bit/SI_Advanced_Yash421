@@ -1,47 +1,29 @@
-//Add two matrices
+//Find the Transpose of a matrix.
 #include <stdio.h>
 
-int main() 
-{
+int main() {
     int m,n;
+    
     printf("Enter number of rows and columns: ");
-    scanf("%d %d", &m, &n);
+    scanf("%d %d", &m,&n);
 
-    int A[100][100], B[100][100], Sum[100][100];
+    int matrix[100][100];
 
-    printf("Enter elements of first matrix:\n");
+    printf("Enter matrix elements:\n");
     for (int i = 0; i < m; i++) 
     {
         for (int j = 0; j < n; j++) 
         {
-            scanf("%d", &A[i][j]);
+            scanf("%d", &matrix[i][j]);
         }
     }
 
-    printf("Enter elements of second matrix:\n");
-    for (int i = 0; i < m; i++) 
+    printf("Transpose of the matrix:\n");
+    for (int i = 0; i < n; i++) 
     {
-        for (int j = 0; j < n; j++) 
+        for (int j = 0; j < m; j++) 
         {
-            scanf("%d", &B[i][j]);
-        }
-    }
-
-    // Add matrices
-    for (int i = 0; i < m; i++) 
-    {
-        for (int j = 0; j < n; j++) 
-        {
-            Sum[i][j] = A[i][j] + B[i][j];
-        }
-    }
-
-    printf("Sum of the matrices:\n");
-    for (int i = 0; i < m; i++) 
-    {
-        for (int j = 0; j < n; j++) 
-        {
-            printf("%d ", Sum[i][j]);
+            printf("%d ", matrix[j][i]);
         }
         printf("\n");
     }
